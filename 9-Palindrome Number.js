@@ -24,10 +24,13 @@
 // -231 <= x <= 231 - 1
 
 var isPalindrome = function (x) {
+    // if 0 return false
     if (x < 0) {
       return false;
     }
+    // reverse number
     const reverseResult = Number(x.toString().split("").reverse().join(""));
+    // if reversed number = x return true
     if(x === reverseResult){
       return true
     } 

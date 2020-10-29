@@ -22,9 +22,12 @@
 // -231 <= x <= 231 - 1
 
 var reverse = function(x) {
+    // Check constraints
     const max = Math.pow(2, 31) - 1;
     const min = Math.pow(-2, 31);
+    // Check if positive or negative
     const sign = Math.sign(x);
+    // split reverse and join
     const num = (x * sign).toString().split('').reverse().join('');
     const result = Number(num) * sign;
     return result > min && result < max ? result : 0;
