@@ -17,7 +17,6 @@
 // Example 4:
 // Input: x = 0
 // Output: 0
- 
+
 // Constraints:
 // -231 <= x <= 231 - 1
-
