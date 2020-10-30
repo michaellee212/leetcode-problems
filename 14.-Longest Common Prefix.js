@@ -22,6 +22,14 @@ var longestCommonPrefix = function(strs) {
       let r = '';
       for (let i = 0; i < strs[0].length; i++) {
         for (let j = 1; j < strs.length; j++) {
+
+        //     .0 .1 .2  
+        //  0   s  t  r 
+
+        //  1   s  t  r 
+
+        //  2   s  r  v 
+
           if (strs[0][i] !== strs[j][i]) return r;
         }
         r += strs[0][i];
