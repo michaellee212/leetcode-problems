@@ -18,3 +18,6 @@
 // -100 <= Node.val <= 100
 // Both l1 and l2 are sorted in non-decreasing order.
 
+var mergeTwoLists = function(l1, l2) {
+    
+};
