@@ -19,5 +19,22 @@
 // Both l1 and l2 are sorted in non-decreasing order.
 
 var mergeTwoLists = function(l1, l2) {
-    
+    let node = new ListNode(-1);
+    if (!l1 && !l2){
+        return null;
+    }
+    else if (!l1 || !l2){
+        return l1 || l2;
+    }
+
+    if (l1.val <= l2.val){
+        node.val = l1.val;
+        l1 = l1.next;
+    } 
+    else {
+        node.val = l2.val;
+        l2 = l2.next;
+    }
+    node.next = mergeTwoLists(l1, l2);
+    return node;   
 };
