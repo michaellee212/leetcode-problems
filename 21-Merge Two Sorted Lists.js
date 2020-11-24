@@ -38,5 +38,3 @@ var mergeTwoLists = function(l1, l2) {
     node.next = mergeTwoLists(l1, l2);
     return node;   
 };
-
-
