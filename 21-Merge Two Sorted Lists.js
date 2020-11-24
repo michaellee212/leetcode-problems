@@ -12,7 +12,6 @@
 // Input: l1 = [], l2 = [0]
 // Output: [0]
 
-
 // Constraints:
 // The number of nodes in both lists is in the range [0, 50].
 // -100 <= Node.val <= 100
