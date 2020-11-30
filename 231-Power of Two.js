@@ -23,9 +23,6 @@
 // Input: n = 5
 // Output: false
 
-
-
-
 var isPowerOfTwo = function(n) {
     let i = 1;
     while(i < n) {
