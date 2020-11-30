@@ -11,6 +11,7 @@
 var moveZeroes = function(nums) {
     let index = 0;
     
+    // loop through and replace the value to shift the one with the value to the back of the array
     for(let i=0; i < nums.length; i++) {
   
         let item = nums[i];
@@ -20,7 +21,8 @@ var moveZeroes = function(nums) {
             index++;
         }
     }
-        
+
+    // replace those pushed back values to 0     
     for(let i = index; i < nums.length; i++) {
         nums[i] = 0;
     }
