@@ -8,3 +8,22 @@
 // You must do this in-place without making a copy of the array.
 // Minimize the total number of operations.
 
+var moveZeroes = function(nums) {
+    let index = 0;
+    
+    for(let i=0; i < nums.length; i++) {
+  
+        let item = nums[i];
+
+        if(nums[i] !== 0) {          
+            nums[index] =  item;
+            index++;
+        }
+    }
+        
+    for(let i = index; i < nums.length; i++) {
+        nums[i] = 0;
+    }
+    
+    return nums;
+};
