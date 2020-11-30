@@ -19,24 +19,30 @@ var hasPathSum = function(root, sum) {
     
     let equal = false;
     
+    // define our helper function to add and move down the binary tree
     const helper = (node, currentSum) => {
         
         if(!node || equal) {
             return 
         }
         
+        // add the node value to the current sum
         currentSum += node.val
-        
+
+        // if there is no node child on the left AND right AND the current sum = sum
+        // we got the valued sum
         if(!node.left && !node.right && currentSum === sum) {          
             equal = true;
         }        
         
+        // if not we traverse the left and right child and continue
         helper(node.left, currentSum);
         helper(node.right,currentSum);
             
     }
-    
+    // call the helper function
     helper(root, 0);
+    
     return equal;
     
 };

@@ -11,6 +11,7 @@ var firstUniqChar = function(s) {
     
     const ht = {};
     
+    // fill in our object hash table with the character counts
     for(let i = 0; i < s.length; i++) {
         let item = s[i];
         
@@ -20,6 +21,7 @@ var firstUniqChar = function(s) {
     
     console.log(ht);
     
+    // check if character count = 1 if so return that character
     for(let i = 0; i < s.length; i++) {
         let item = s[i];
         
