@@ -19,3 +19,7 @@
 // 1 <= nums.length <= 3 * 104
 // -3 * 104 <= nums[i] <= 3 * 104
 // Each element in the array appears twice except for one element which appears only once.
+
+var singleNumber = function(nums) {
+	return nums.reduce((prev, curr) => prev ^ curr);
+};
