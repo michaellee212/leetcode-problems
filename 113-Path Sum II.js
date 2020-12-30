@@ -21,7 +21,31 @@
 
 
 var pathSum = function(root, sum) {
-
-
+    
+    if(!root) {
+        return [];
+    }
+    
+    let res = []
+    
+    const helper = (node, target, prevPaths) => {
+        prevPaths.push(node.val);
+        
+        if(!node.left && !node.right && node.val === target) {
+            res.push(prevPaths);
+        }
+        
+        if(node.left) {
+            helper(node.left, target - node.val, prevPaths.slice())
+        }
+        
+        if(node.right) {
+            helper(node.right, target - node.val, prevPaths.slice())
+        }
+        
+    }
+    
+    helper(root, sum, [])
+    return res;
     
 };
