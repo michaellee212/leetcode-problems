@@ -21,6 +21,7 @@
 // -109 <= target <= 109
 // Only one valid answer exists.
 
+
 const twoSum = (nums, target) => {
     const map = {};
   
@@ -35,3 +36,21 @@ const twoSum = (nums, target) => {
     
     return null;
   };
+
+
+const twoSum2 = (nums, target) => {
+  let set = new Set();
+
+  for (let i = 0; i < nums.length; i++) {
+    let e = nums[i]
+    if(set.has(target - e)) {
+      return [target - e, e]
+    }
+    if(set.has(e - target)) {
+      return [e - target, e]
+    }
+    set.add(e);
+  }
+  return [];
+};
+  
