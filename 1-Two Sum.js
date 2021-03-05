@@ -37,6 +37,22 @@ const twoSum = (nums, target) => {
     return null;
   };
 
+const twoSum = (nums, target) => {
+  let set = new Map()
+
+  for (let i = 0; i < nums.length; i++) {
+    let e = nums[i]
+    if(set.has(target - e)) {
+      return [set.get(target - e), i];
+    }
+    if(set.has(e - target)) {
+      return [set.get(e - target), i];
+    }
+  set.set(e, i)
+  }
+  return [];
+};
+
 
 const twoSum2 = (nums, target) => {
   let set = new Set();
@@ -54,3 +70,13 @@ const twoSum2 = (nums, target) => {
   return [];
 };
   
+
+const twoSum = function(nums, target) {
+  const comp = {};
+  for(let i=0; i<nums.length; i++){
+      if(comp[nums[i] ]>=0){
+          return [ comp[nums[i] ] , i]
+      }
+      comp[target-nums[i]] = i
+  }
+};
