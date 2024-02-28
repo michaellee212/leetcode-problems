@@ -22,6 +22,8 @@ var majorityElement = function(nums) {
 
     for(i = 0; i < nums.length; i++) {
         map[nums[i]] = 1 + (map[nums[i]] || 0);
+
+        // if there count is 0
         if (map[nums[i]] > count) {
             val = nums[i];
             count = map[nums[i]];
@@ -38,16 +40,16 @@ var majorityElement = function(nums) {
 // Space complexity: O(1)
 
 var majorityElement = function(nums) {
-    let res = 0;
-    let majority = 0;
+    let val = 0;
+    let count = 0;
      
      for (let n of nums) {
-         if (majority === 0) {
-             res = n;
+         if (count === 0) {
+            val = n;
          }
          
-         majority += n === res ? 1 : -1;
+         count += n === val ? 1 : -1;
      }
      
-     return res;    
+     return val;    
  };
