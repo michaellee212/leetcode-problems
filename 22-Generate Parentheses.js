@@ -34,3 +34,58 @@ var generateParenthesis = function(n) {
     return result;
     
 };
+
+
+
+// n = 3, len(str) = 5
+// char = 6
+
+// (()
+// ( -> (
+// )
+
+// cond1 len(str) == 2n{
+
+// }
+
+// cond2 ? "("
+//  ( n times
+//  countLeft = n
+ 
+
+// cond3 ? ")"
+
+// countRight <= countLeft
+
+// ) n times
+
+
+function generateParenthesis(n) {
+    
+    let arr = [];
+    
+    function recur(str, countRight, countLeft) {
+        if(str.length === 2*n) {
+            
+            arr.push(str)
+            return;
+        }
+        
+        console.log("countLeft ", countLeft);
+        console.log("countRight ", countRight);
+        
+        if(countLeft < n) {
+            recur(str + "(", countRight, countLeft + 1);
+        }
+
+        if(countRight < countLeft) {
+            recur(str + ")", countRight + 1, countLeft);
+        }
+    }
+    
+    recur("", 0, 0)
+    console.log(arr);
+
+    return arr;
+    
+}
