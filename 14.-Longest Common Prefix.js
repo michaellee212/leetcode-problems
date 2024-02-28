@@ -32,7 +32,9 @@ var longestCommonPrefix = function(strs) {
 
         //  2   s  r  v 
 
-          if (strs[0][i] !== strs[j][i]) return r;
+          if (strs[0][i] !== strs[j][i]) {
+            return r;
+          }
         }
         r += strs[0][i];
       }
