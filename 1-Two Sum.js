@@ -14,84 +14,77 @@
 // Example 3:
 // Input: nums = [3,3], target = 6
 // Output: [0,1]
- 
+
 // Constraints:
 // 2 <= nums.length <= 105
 // -109 <= nums[i] <= 109
 // -109 <= target <= 109
 // Only one valid answer exists.
 
-
 const twoSum = (nums, target) => {
-    const map = {};
-  
-    for (let i = 0; i < nums.length; i++) {
-      const another = target - nums[i];
-
-      if (another in map) {
-        return [map[another], i];
-      }
-      map[nums[i]] = i;
-    }
-    
-    return null;
-  };
-
-const twoSum = (nums, target) => {
-  let set = new Map()
+  const map = {};
 
   for (let i = 0; i < nums.length; i++) {
-    let e = nums[i]
-    if(set.has(target - e)) {
+    const another = target - nums[i];
+
+    if (another in map) {
+      return [map[another], i];
+    }
+    map[nums[i]] = i;
+  }
+
+  return null;
+};
+
+const twoSum = (nums, target) => {
+  let set = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    let e = nums[i];
+    if (set.has(target - e)) {
       return [set.get(target - e), i];
     }
-    if(set.has(e - target)) {
+    if (set.has(e - target)) {
       return [set.get(e - target), i];
     }
-  set.set(e, i)
+    set.set(e, i);
   }
   return [];
 };
-
 
 const twoSum2 = (nums, target) => {
   let set = new Set();
 
   for (let i = 0; i < nums.length; i++) {
-    let e = nums[i]
-    if(set.has(target - e)) {
-      return [target - e, e]
+    let e = nums[i];
+    if (set.has(target - e)) {
+      return [target - e, e];
     }
-    if(set.has(e - target)) {
-      return [e - target, e]
+    if (set.has(e - target)) {
+      return [e - target, e];
     }
     set.add(e);
   }
   return [];
 };
-  
 
-
-const twoSum = function(nums, target) {
-  for(let i = 0; i < nums.length; i++) {
-    for(let j = i + 1; j < nums.length; j++) {
-      if(nums[i] + nums[j] === target) {
+const twoSum = function (nums, target) {
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
         return [i, j];
       }
     }
-
   }
+};
 
-}
-
-const twoSum = function(nums, target) {
+const twoSum = function (nums, target) {
   const comp = {};
 
-  for(let i=0; i<nums.length; i++){
-    
-      if(comp[nums[i]] >= 0){
-          return [ comp[nums[i] ] , i]
-      }
-      comp[target-nums[i]] = i
+  for (let i = 0; i < nums.length; i++) {
+    if (comp[nums[i]] >= 0) {
+      return [comp[nums[i]], i];
+    }
+    comp[target - nums[i]] = i;
   }
 };
