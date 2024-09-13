@@ -71,7 +71,6 @@ var rotate = function (nums, k) {
       l++;
       r--;
     }
-
     return nums;
   }
 };
