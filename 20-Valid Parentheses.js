@@ -45,7 +45,6 @@ var isValid = function (s) {
       } else return false;
     }
   }
-
   // if arr is empty
   return arr.length === 0 ? true : false;
 };
